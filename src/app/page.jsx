@@ -1,6 +1,5 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-
 function Home() {
   return (
     <div className={styles.containerExemplo}>
@@ -14,8 +13,13 @@ function Home() {
         <div className={styles.divVermelha}></div>
         <div className={styles.divVerde}></div>
       </div>
+        <div className={styles.divbutton}>
+      <a href="/ex-01"><button>Pag 2</button></a>
+        </div>
+        <div className={styles.divbutton}>
+      <a href="/ex-02"><button>Pag 3</button></a>
+        </div>
     </div>
   );
-}
-
+};
 export default Home;

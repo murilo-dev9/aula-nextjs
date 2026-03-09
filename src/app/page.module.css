@@ -21,3 +21,9 @@
     width: 30px; 
     background-color: #0f0;
 }
+
+.divbutton a{
+    margin: 2px;
+    display: flex; 
+    flex-direction: column;
+}
