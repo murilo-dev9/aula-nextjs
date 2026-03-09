@@ -5,8 +5,10 @@ export default Home;
 
  function Home() {
   return (
-    <div>
+    <div> 
+      
       <h1>react com next JS</h1>
+      
       </div>
   );
 }
