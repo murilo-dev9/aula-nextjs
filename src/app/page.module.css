@@ -1,29 +1,19 @@
-.containerExemplo {
-    border: 2px solid #ff0; 
-    display: flex; 
+.conteinerHome {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 95vh;
+    max-width: 124rem;
+    width: 100%;
 }
-
-.conteinerExPosicao {
-    border: 2px solid #00f; 
-    display: flex; 
-    flex-direction: column;
-}
-
-.divVermelha {
-    height: 30px; 
-    width: 30px; 
-    background-color: #f00;
-}
-
-.divVerde {
-    height: 30px; 
-    width: 30px; 
-    background-color: #0f0;
-}
-
-.divbutton a{
-    margin: 2px;
-    display: flex; 
+.conteinerLista {
+    border: 0.2rem solid #f00;
+    height: 45vh;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow-y:auto;
+    display: flex;
     flex-direction: column;
 }

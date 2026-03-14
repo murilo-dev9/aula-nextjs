@@ -1,25 +1,19 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
+export default Home;
+
 function Home() {
   return (
-    <div className={styles.containerExemplo}>
-      <h1>React com Next JS</h1>
-      <h2>Aula de introdução</h2>
-      <h3>Leiaute e Estilização</h3>
-      <p>Nesta aula iremos entender o uso de CSS global e local.</p>
-      <label>Exemplo Label</label>
-      <small>Exemplo Small</small>
-      <div className={styles.conteinerExPosicao}>
-        <div className={styles.divVermelha}></div>
-        <div className={styles.divVerde}></div>
-      </div>
-        <div className={styles.divbutton}>
-      <a href="/ex-01"><button>Pag 2</button></a>
-        </div>
-        <div className={styles.divbutton}>
-      <a href="/ex-02"><button>Pag 3</button></a>
-        </div>
+    <div className={styles.conteinerHome}>
+    <div className={styles.conteinerLista}>
+      <h1>Exemplos</h1>
+      <Link href="/exemplos/ex-01">exemplo 1</Link>
+      <Link href="/exemplos/ex-02">exemplo 2</Link>
+    </div>
+    <div className={styles.conteinerLista}>
+      <h1>Atividades</h1>
+      <Link href="/atividades/atv-01">atividade1</Link>
+    </div>
     </div>
   );
-};
-export default Home;
+}
