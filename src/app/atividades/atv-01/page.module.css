@@ -1,0 +1,16 @@
+.stlG {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stl1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stl1 link{
+    color: aqua;
+}
