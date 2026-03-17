@@ -12,7 +12,7 @@ function atividade01(){
             <h1>atividade 1</h1>
             <div className={style.stl1}>
                 <h1>apenas um cachorro salsicha</h1>
-                <Image src={Salsicha}></Image>
+                <Image src={Salsicha} alt=""></Image>
                 <Link href="/">voltar</Link>
             </div>
                
