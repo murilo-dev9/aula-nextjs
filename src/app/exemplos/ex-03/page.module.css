@@ -1,0 +1,18 @@
+.gr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+    
+}
+
+.button{
+   border: 0.3rem solid red;
+   border-radius: 0.5rem;
+    height: 3vh;
+    width: 5vh;
+}
+.button:hover{
+background-color: aqua;   
+}
