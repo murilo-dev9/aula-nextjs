@@ -18,6 +18,12 @@ export default function contador() {
         setNum2(num2 + 1);
     }
 
+    function handlereset(){
+        setNum1(0)
+        setNum2(0)
+    }
+
+
     return (
         <div className={style.gr}>
             <h1>Atividade 2</h1>
@@ -33,6 +39,7 @@ export default function contador() {
                     <label>{`${num2} pontos:`}</label>
                     <label onClick={handleNum2}>+1</label>
                 </div>
+                <label onClick={handlereset} className={style.rs}>reset</label>
             </div>
         </div>
     )

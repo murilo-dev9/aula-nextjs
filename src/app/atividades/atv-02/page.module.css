@@ -6,7 +6,8 @@
 }
 
 .pn {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
     border: 0.3rem solid black;
@@ -25,4 +26,19 @@
     margin: 2rem;
     width: 13rem;
     height: 15rem;
+}
+
+.rs{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    border: 0.4rem solid black;
+    border-radius: 1rem;
+
+    transition: 0.3s;
+}
+
+.rs:hover{
+    background-color: #858585;
+    color: aliceblue;
 }
