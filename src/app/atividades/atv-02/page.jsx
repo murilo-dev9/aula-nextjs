@@ -11,11 +11,19 @@ export default function contador() {
     function handleNum1() {
         setNum1(num1 + 1);
     }
+    
+    function handleNumT1() {
+        setNum1(num1 - 1);
+    }
 
     const [num2, setNum2] = useState(0);
 
     function handleNum2() {
         setNum2(num2 + 1);
+    }
+
+    function handleNumT2() {
+        setNum2(num2 - 1);
     }
 
     function handlereset(){
@@ -32,15 +40,18 @@ export default function contador() {
                 <div className={style.ctd}>
                     <h1>time 1</h1>
                     <label>{`${num1} pontos:`}</label>
-                    <label onClick={handleNum1}>+1</label>
+                    <label className={style.bt} onClick={handleNum1}>+1</label>
+                    <label className={style.bt} onClick={handleNumT1}>-1</label>
                 </div>
                 <div className={style.ctd}>
                     <h1>time 2</h1>
                     <label>{`${num2} pontos:`}</label>
-                    <label onClick={handleNum2}>+1</label>
+                    <label className={style.bt} onClick={handleNum2}>+1</label>
+                    <label className={style.bt} onClick={handleNumT2}>-1</label>
                 </div>
                 <label onClick={handlereset} className={style.rs}>reset</label>
             </div>
+            <Link className={style.link} href="/">voltar</Link>
         </div>
     )
 }
