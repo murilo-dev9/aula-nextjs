@@ -32,8 +32,13 @@ export default function Componentes (){
         <div>
             <h1>Atividade 3</h1>
             <label>{`nome ${name} `}</label>
-            
-            <label click={setName}>dsds</label>
+            <div className={Style.bt}>
+            <Botao text={"Jesus"} click={handleJesus} action={""}></Botao>
+            <Botao text={"Abel"} click={handleabel} action={"Abel"}></Botao>
+            <Botao text={"miguel"} click={handlemiguel} action={"miguel"}></Botao>
+            <Botao text={"caim"} click={handlecaim} action={"caim"}></Botao>
+            <Botao text={"lucifer"} click={handlelucifer} action={"lucifer"}></Botao>
+        </div>
         </div>
     )
 }
