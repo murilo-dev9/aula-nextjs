@@ -1,4 +1,8 @@
-.bt{
-    display: flex;
-    
+.gr{
+    border: 0.4rem solid black;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+ 
+    justify-content: center; 
 }
