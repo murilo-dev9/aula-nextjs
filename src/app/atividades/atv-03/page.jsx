@@ -9,35 +9,35 @@ export default function Componentes() {
 
     const [name, setName] = useState("");
 
-    function handleabel() {
-        setName("Abel");
+    function handleCadastrar() {
+        setName("cadastrar");
     }
 
-    function handlemiguel() {
-        setName("Miguel");
+    function handleEditar() {
+        setName("Editar");
     }
 
-    function handlelucifer() {
-        setName("Lucifer");
+    function handleLista() {
+        setName("Listar");
     }
 
-    function handlecaim() {
-        setName("Caim");
+    function handleExcluir() {
+        setName("Excluir");
     }
 
-    function handleJesus() {
-        setName("Jesus");
+    function handleCancelar() {
+        setName("Cancelar");
     }
     return (
         <div className={Style.gr}>
             <h1>Atividade 3</h1>
-            <label>{`nome ${name} `}</label>
+            <label>{`Nome: ${name} `}</label>
             <div className={Style.bt}>
-                <Botao text={"Jesus"} click={handleJesus} action={"c1"}></Botao>
-                <Botao text={"Abel"} click={handleabel} action={"c2"}></Botao>
-                <Botao text={"miguel"} click={handlemiguel} action={"c3"}></Botao>
-                <Botao text={"caim"} click={handlecaim} action={"c4"}></Botao>
-                <Botao text={"lucifer"} click={handlelucifer} action={"c5"}></Botao>
+                <Botao text={"Cadastrar"} click={handleCadastrar} action={"c1"}></Botao>
+                <Botao text={"Editar"} click={handleEditar} action={"c2"}></Botao>
+                <Botao text={"Listar"} click={handleLista} action={"c3"}></Botao>
+                <Botao text={"Excluir"} click={handleExcluir} action={"c4"}></Botao>
+                <Botao text={"Cancelar"} click={handleCancelar} action={"c5"}></Botao>
             </div>
             <Link href={"/"}>voltar</Link>
         </div>
