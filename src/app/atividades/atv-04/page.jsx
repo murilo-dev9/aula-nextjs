@@ -1,40 +1,71 @@
 'use client'
-import {use, useState} from 'react'
-import style from "./page.module.css";
 
-export default function formComponent (){
-    const[inputValue, setInputValue] = useState({
-        id:'', quant:'', nome:'',
-    });
-   
+import { useState } from 'react';
+import Image from 'next/image';
+import lixeira from './images/icons8-waste-50.png'
+import styles from './page.module.css';
 
-    const [historico, setHistorico] = useState([])
+function Atividade04() {
+  const [inputValue, setInputValue] = useState({
+    id: '',
+    quantidade: '',
+    produto: ''
+  });
+  const [dadosCadastrados, setDadosCadastrados] = useState([]);
 
-    const handleSubmit = (e) => 
-        { e.preventDfault()
-            if (!inputValue.produto || !inputValue.quant) return
-                const novaEntrada = `${quant} x ${name}`
-                setHistorico([...novaEntrada])
-            
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!inputValue.produto || !inputValue.quantidade) return;
 
-return(
-    <div>
-        <form onSubmit={handleSubmit} className={style.form}>
-            <h2>Lista de produtos</h2>
-            <input type="number" placeholder='quantidade' onChange={e => setInputValue({...inputValue, quant:e.target.value})}/>
-            <input type="text" placeholder='nome do produto' onChange={e => setInputValue({...inputValue, nome:e.target.value})}/>
-            <button type="submit">enviar</button>
-        </form>
-        <div>
-            {
-                historico.map(item => <p key={item}>{item}</p>)
-            }
-        </div>
+    // Adiciona o novo item e gera um ID único
+    const novoItem = { ...inputValue, id: Date.now() };
+    setDadosCadastrados([...dadosCadastrados, novoItem]);
 
+    // Limpa os campos
+    setInputValue({ id: '', quantidade: '', produto: '' });
+  };
+
+  // botão de delete
+ const removerItem= (id) =>{
+const novaLista=dadosCadastrados.filter(item => item.id !== id)
+setDadosCadastrados(novaLista)
+ }
+
+
+
+  return (
+    <div className={styles.container}>
+      <h1>Formulário básico</h1>
+
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          type="number"
+          value={inputValue.quantidade}
+          onChange={(e) => setInputValue({ ...inputValue, quantidade: e.target.value })}
+          placeholder="Qtd"
+        />
+        <input
+          type="text"
+          value={inputValue.produto}
+          onChange={(e) => setInputValue({ ...inputValue, produto: e.target.value })}
+          placeholder="Produto..."
+        />
+        <button type="submit">Adicionar </button>
+      </form>
+
+      {dadosCadastrados.length > 0 && <h2>Lista de compras</h2>}
+
+      <ul className={styles.lista}>
+        {dadosCadastrados.map((item) => (
+          <li key={item.id} className={styles.linha}>
+            <span className={styles.conteudo}>
+              {item.quantidade}x {item.produto} <Image className={styles.img} src={lixeira} alt='' onClick={() => removerItem(item.id)}></Image>
+            </span>
+          </li>
+        ))}
+      </ul>
     </div>
-)
-
-
-
+  );
 }
+
+export default Atividade04;
