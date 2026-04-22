@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import lixeira from './images/icons8-waste-50.png'
+import lixeira from './images/lixeira.png'
 import gifLixeira from "./images/lixeira.gif"
 import styles from './page.module.css';
 
@@ -31,6 +31,7 @@ function Atividade04() {
 const novaLista=dadosCadastrados.filter(item => item.id !== id)
 setDadosCadastrados(novaLista)
  }
+
 
 
 
