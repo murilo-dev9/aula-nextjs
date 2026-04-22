@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import lixeira from './images/icons8-waste-50.png'
+import gifLixeira from "./images/lixeira.gif"
 import styles from './page.module.css';
 
 function Atividade04() {
@@ -59,7 +60,7 @@ setDadosCadastrados(novaLista)
         {dadosCadastrados.map((item) => (
           <li key={item.id} className={styles.linha}>
             <span className={styles.conteudo}>
-              {item.quantidade}x {item.produto} <Image className={styles.img} src={lixeira} alt='' onClick={() => removerItem(item.id)}></Image>
+              {item.quantidade}x {item.produto} <Image className={styles.img} src={gifLixeira} alt='' onClick={() => removerItem(item.id)}></Image>
             </span>
           </li>
         ))}
