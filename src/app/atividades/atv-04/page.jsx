@@ -32,6 +32,10 @@ const novaLista=dadosCadastrados.filter(item => item.id !== id)
 setDadosCadastrados(novaLista)
  }
 
+ const mudarItem= (id) => {
+  
+ }
+
 
 
 
