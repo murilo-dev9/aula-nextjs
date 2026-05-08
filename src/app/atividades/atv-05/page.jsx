@@ -1,47 +1,67 @@
 'use client'
 
-import styles from "./page.module.css"
-import { useState , useEffect } from "react"
+import { useState } from 'react'
+import styles from './page.module.css'
 
-export default  function crud (){
+export default function FormComponent() {
+  const [texto, setTexto] = useState('')
+  const [lista, setLista] = useState([])
+  const [editando, setEditando] = useState(null)
 
-    const[dados, setDados] = useState("")
-    const[historico,setHistorico]= useState([])
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (!texto) return
 
-   
-
-    const handleExibirDados =(e) =>{
-        e.preventDefault();
-        if(dados){
-            const id = Date.now().toString(36)
-            const novosDados= {Id:id, produto:dados} 
-           // `id produto ${id} produto: ${dados}` 
-
-            setHistorico([...historico, novosDados])
-            
-        }
-    }
-    
-    const handleMudarDados = () =>{
-        historico.filter()
+    if (editando !== null) {
+      const novaLista = [...lista]
+      novaLista[editando] = texto
+      setLista(novaLista)
+      setEditando(null)
+    } else {
+      setLista([...lista, texto])
     }
 
-return(
-<div>
-    <h1>mockup CRUD Vite</h1>
+    setTexto('')
+  }
 
-    <form onSubmit={handleExibirDados}>
-        <input name="dados" type="text" placeholder="digite algo..." onChange={e => setDados(e.target.value)}/>
-        <input type="submit" value="+adicionar" />
-    </form>
+  function editarItem(index) {
+    setTexto(lista[index])
+    setEditando(index)
+  }
 
-    <div>
-        {
-            historico.map( item => <p key={item}>{item}</p>) 
-        }
+  function excluirItem(index) {
+    setLista(lista.filter((_, i) => i !== index))
+  }
+
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.titulo}>Atividade 5 CRUD</h1>
+
+      <form onSubmit={handleSubmit} className={styles.formulario}>
+        <input
+          type="text"
+          placeholder="Digite algo..."
+          value={texto}
+          onChange={e => setTexto(e.target.value)}
+        />
+
+        <button type="submit">
+          {editando !== null ? 'Salvar' : '+ Adicionar'}
+        </button>
+      </form>
+
+      <div className={styles.lista}>
+        {lista.map((item, index) => (
+          <div key={index} className={styles.item}>
+            <span className={styles.textoItem}>{item}</span>
+
+            <div className={styles.botoes}>
+              <button onClick={() => editarItem(index)}>✏️</button>
+              <button onClick={() => excluirItem(index)}>🗑️</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-</div>
-
-)
-
+  )
 }
