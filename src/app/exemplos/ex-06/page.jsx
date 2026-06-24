@@ -147,15 +147,15 @@ export default function CadastroEquipe() {
                             <p><strong>Equipe:</strong> {equipe.nome} ({equipe.categoria})</p>
                             <p><strong>Responsável:</strong> {equipe.email}</p>
                             <div>
-                            <p><strong>Uniforme: </strong> {/*{equipe.corPrimaria} {equipe.temReserva === 'sim' && ` / ${equipe.corSecundaria}`}*/}</p>
-                            <Camisa 
-                                fillColor={equipe.corPrimaria} 
-                                strokeColor="#000000" 
-                            />
-                            {equipe.temReserva === 'sim' ? <Camisa 
-                                fillColor={equipe.corSecundaria} 
-                                strokeColor="#000000" 
-                            /> : null }
+                                <p><strong>Uniforme: </strong> {/*{equipe.corPrimaria} {equipe.temReserva === 'sim' && ` / ${equipe.corSecundaria}`}*/}</p>
+                                <Camisa
+                                    fillColor={equipe.corPrimaria}
+                                    strokeColor="#000000"
+                                />
+                                {equipe.temReserva === 'sim' ? <Camisa
+                                    fillColor={equipe.corSecundaria}
+                                    strokeColor="#000000"
+                                /> : null}
                             </div>
                             <hr />
                             <p><strong>Membros ({integrantes.length}):</strong></p>
